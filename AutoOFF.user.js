@@ -9,8 +9,8 @@
 // @match        https://*.plemiona.pl/game.php?screen=place
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
-// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/blob/master/AutoOFF.js
-// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/blob/master/AutoOFF.js
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.js
 // ==/UserScript==
 
 class Unit{
