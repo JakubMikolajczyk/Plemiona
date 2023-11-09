@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto OFF
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -46,8 +46,6 @@ function getUnits(){
 
 (function() {
     'use strict';
-
- console.log("!#@!$")
     let units = getUnits()
 
     units.axe.setMaxInputValWithOffset(300)
