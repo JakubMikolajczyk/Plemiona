@@ -1,3 +1,18 @@
+// ==UserScript==
+// @name         Auto OFF
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  try to take over the world!
+// @author       You
+// @match        https://*.plemiona.pl/game.php?*&screen=place
+// @match        https://*.plemiona.pl/game.php?*&screen=place*
+// @match        https://*.plemiona.pl/game.php?screen=place
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/blob/master/AutoOFF.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/blob/master/AutoOFF.js
+// ==/UserScript==
+
 class Unit{
  constructor(input){
  this.input = input
