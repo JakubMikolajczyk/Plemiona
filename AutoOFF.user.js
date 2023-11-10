@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto OFF
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -9,8 +9,8 @@
 // @match        https://*.plemiona.pl/game.php?screen=place
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
-// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.js
-// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.js
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
 // ==/UserScript==
 
 class Unit{
@@ -46,6 +46,8 @@ function getUnits(){
 
 (function() {
     'use strict';
+
+ console.log("!#@!$")
     let units = getUnits()
 
     units.axe.setMaxInputValWithOffset(300)
