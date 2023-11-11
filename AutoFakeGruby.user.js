@@ -8,6 +8,8 @@
 // @match        https://*.plemiona.pl/game.php?*&screen=place*
 // @match        https://*.plemiona.pl/game.php?screen=place
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
 // @grant        none
 
 // ==/UserScript==
