@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Fake Gruby
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -24,7 +24,7 @@ class Unit{
     }
 
     setInputVal(val){
-    this.input.val(Math.min(this.getMaxVal(), Math.max(0, val)))
+    this.input.val(Math.min(this.getMaxVal(), Math.max(0, Math.ceil(val))))
     }
 
     setMaxInputVal(){
@@ -33,6 +33,13 @@ class Unit{
 
     setMaxInputValWithOffset(offset){
         this.setInputVal(this.getMaxVal() - offset)
+    }
+
+    getInputVal(){
+        return Number(this.input.val())    }
+
+    addToInputVal(val){
+     this.setInputVal(this.getInputVal() + val)
     }
 }
 
