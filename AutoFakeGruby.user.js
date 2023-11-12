@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Fake Gruby
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -15,9 +15,9 @@
 // ==/UserScript==
 
 class Unit{
- constructor(input){
- this.input = input
- }
+    constructor(input){
+        this.input = input
+    }
 
     getMaxVal(){
      return this.input.attr('data-all-count')
@@ -36,7 +36,8 @@ class Unit{
     }
 
     getInputVal(){
-        return Number(this.input.val())    }
+        return Number(this.input.val())
+    }
 
     addToInputVal(val){
      this.setInputVal(this.getInputVal() + val)
@@ -49,13 +50,11 @@ function getUnits(){
     game_data.units.forEach(unit => {
             units[unit] = new Unit($(`#unit_input_${unit}`))
     })
-      return units
+    return units
 }
 
 (function() {
     'use strict';
-
- console.log("!#@!$")
     let units = getUnits()
 
     units.spy.setInputVal(6)
