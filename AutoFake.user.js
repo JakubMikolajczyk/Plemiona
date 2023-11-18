@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto fake
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       Jakub Mikolajczyk
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -87,15 +87,15 @@ function getUnits(){
     }
 
     if(fake_limit > 0){
-        fake_limit -= units.light.addToInputVal(fake_limit/4)
+        fake_limit -= units.light.addToInputVal(fake_limit/4) * 4
     }
 
     if(fake_limit > 0 && (units.spy.getMaxVal() - fake_limit/2) > 50){
-        fake_limit -= units.spy.addToInputVal(fake_limit/2)
+        fake_limit -= units.spy.addToInputVal(fake_limit/2) * 2
     }
 
     if(fake_limit > 0 && (units.heavy.getMaxVal() - fake_limit/6) > 200){
-        units.heavy.setInputVal(fake_limit/6)
+        fake_limit -= units.heavy.addToInputVal(fake_limit/6) * 6
     }
 
 })();
