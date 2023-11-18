@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto fake
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       Jakub Mikolajczyk
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -38,7 +38,10 @@ class Unit{
         return Number(this.input.val())    }
 
     addToInputVal(val){
-     this.setInputVal(this.getInputVal() + val)
+     let prev = this.getInputVal()
+     this.setInputVal(prev + val)
+     let newVal = this.getInputVal()
+     return newVal - prev
     }
 }
 
@@ -80,20 +83,19 @@ function getUnits(){
     fake_limit -= units.light.getInputVal() * 4
 
     if(fake_limit > 0){
-        units.axe.addToInputVal(fake_limit)
-        fake_limit -= units.axe.getInputVal()
+        fake_limit -= units.axe.addToInputVal(fake_limit)
     }
 
     if(fake_limit > 0){
-        units.light.addToInputVal(fake_limit/4)
-        fake_limit -= units.light.getInputVal()
+        fake_limit -= units.light.addToInputVal(fake_limit/4)
     }
+
     if(fake_limit > 0 && (units.spy.getMaxVal() - fake_limit/2) > 50){
-        units.spy.addToInputVal(fake_limit/2)
+        fake_limit -= units.spy.addToInputVal(fake_limit/2)
     }
 
     if(fake_limit > 0 && (units.heavy.getMaxVal() - fake_limit/6) > 200){
-        units.heave.setInputVal(fake_limit/6)
+        units.heavy.setInputVal(fake_limit/6)
     }
 
 })();
