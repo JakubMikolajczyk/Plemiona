@@ -15,9 +15,9 @@
 // ==/UserScript==
 
 class Unit{
-    constructor(input){
-        this.input = input
-    }
+ constructor(input){
+ this.input = input
+ }
 
     getMaxVal(){
      return this.input.attr('data-all-count')
@@ -36,11 +36,13 @@ class Unit{
     }
 
     getInputVal(){
-        return Number(this.input.val())
-    }
+        return Number(this.input.val())    }
 
     addToInputVal(val){
-     this.setInputVal(this.getInputVal() + val)
+     let prev = this.getInputVal()
+     this.setInputVal(prev + val)
+     let newVal = this.getInputVal()
+     return newVal - prev
     }
 }
 
@@ -57,6 +59,29 @@ function getUnits(){
     'use strict';
     let units = getUnits()
 
-    units.spy.setInputVal(6)
+    units.spy.setInputVal(5)
     units.snob.setInputVal(1)
+
+    let fake_limit = 120
+    
+    let axe_num = fake_limit/2
+    let lk_num = fake_limit/8
+
+    units.axe.setInputVal(axe_num)
+    fake_limit -= units.axe.getInputVal()
+
+    units.light.setInputVal(lk_num)
+    fake_limit -= units.light.getInputVal() * 4
+
+    if(fake_limit > 0){
+        fake_limit -= units.axe.addToInputVal(fake_limit)
+    }
+
+    if(fake_limit > 0){
+        fake_limit -= units.light.addToInputVal(fake_limit/4) * 4
+    }
+
+    if(fake_limit > 0 && (units.heavy.getMaxVal() - fake_limit/6) > 200){
+        fake_limit -= units.heavy.addToInputVal(fake_limit/6) * 6
+    }
 })();
