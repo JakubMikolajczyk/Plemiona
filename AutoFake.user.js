@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto fake
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  try to take over the world!
 // @author       Jakub Mikolajczyk
 // @match        https://*.plemiona.pl/game.php?*&screen=place
