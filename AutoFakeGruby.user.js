@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Fake Gruby
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.plemiona.pl/game.php?*&screen=place
@@ -62,7 +62,7 @@ function getUnits(){
     units.spy.setInputVal(5)
     units.snob.setInputVal(1)
 
-    let fake_limit = 120
+    let fake_limit = 80
     
     let axe_num = fake_limit/2
     let lk_num = fake_limit/8
