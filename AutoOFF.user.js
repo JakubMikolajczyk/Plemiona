@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         Auto OFF
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      2024-01-20
 // @description  try to take over the world!
-// @author       You
+// @author       Jakub Mikolaczyk
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+
 // @match        https://*.plemiona.pl/game.php?*&screen=place
 // @match        https://*.plemiona.pl/game.php?*&screen=place*
 // @match        https://*.plemiona.pl/game.php?screen=place
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
-// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
-// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoOFF.user.js
 // ==/UserScript==
 
 class Unit{

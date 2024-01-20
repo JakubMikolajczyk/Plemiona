@@ -1,17 +1,17 @@
 // ==UserScript==
 // @name         Auto Fake Gruby
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      2024-01-20
 // @description  try to take over the world!
-// @author       You
+// @author       Jakub Mikolajczyk
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+
 // @match        https://*.plemiona.pl/game.php?*&screen=place
 // @match        https://*.plemiona.pl/game.php?*&screen=place*
 // @match        https://*.plemiona.pl/game.php?screen=place
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
-// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFakeGruby.user.js
-// @grant        none
-
 // ==/UserScript==
 
 class Unit{

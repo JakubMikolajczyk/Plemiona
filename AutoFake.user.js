@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         Auto fake
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      2024-01-20
 // @description  try to take over the world!
 // @author       Jakub Mikolajczyk
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFake.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFake.user.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
+// @grant        none
+
 // @match        https://*.plemiona.pl/game.php?*&screen=place
 // @match        https://*.plemiona.pl/game.php?*&screen=place*
 // @match        https://*.plemiona.pl/game.php?screen=place
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
-// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFake.user.js
-// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/AutoFake.user.js
-// @grant        none
 // ==/UserScript==
 
 class Unit{
