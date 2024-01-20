@@ -4,10 +4,13 @@
 // @version      2024-01-20
 // @description  Filtrowanie i zaznaczanie raportow
 // @author       Jakub Mikolajczyk
-// @match        https://pl182.plemiona.pl/game.php?village=*&screen=report
-// @match        https://pl182.plemiona.pl/game.php?village=*&screen=report*
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/reportFilter.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/reportFilter.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
 // @grant        none
+
+// @match        https://pl182.plemiona.pl/game.php?village=*&screen=report
+// @match        https://pl182.plemiona.pl/game.php?village=*&screen=report*
 // ==/UserScript==
 
 class reportRow{

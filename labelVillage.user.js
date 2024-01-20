@@ -4,9 +4,12 @@
 // @version      2023-12-21
 // @description  //TODO
 // @author       Jakub Mikolajczyk
-// @match        https://pl182.plemiona.pl/game.php?village=*&screen=overview
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/labelVillage.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/labelVillage.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
 // @grant        none
+
+// @match        https://pl182.plemiona.pl/game.php?village=*&screen=overview
 // ==/UserScript==
 
 const UnitTypes = {

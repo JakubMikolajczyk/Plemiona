@@ -4,11 +4,14 @@
 // @version      2024-01-12
 // @description  Zaznaczanie wioski po wprowadzonych kordach (odzielanie spacja, enter)
 // @author       Jakub Mikolajczyk
+// @downloadURL  https://github.com/JakubMikolajczyk/Plemiona/raw/master/selectByCordGroup.user.js
+// @updateURL    https://github.com/JakubMikolajczyk/Plemiona/raw/master/selectByCordGroup.user.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
+// @grant        none
+
 // @match        https://pl182.plemiona.pl/game.php?village=*&screen=overview_villages&mode=groups
 // @match        https://pl182.plemiona.pl/game.php?village=*&screen=overview_villages&&mode=groups&type=static
 // @match        https://pl182.plemiona.pl/game.php?village=*&screen=overview_villages&type=static&mode=groups&group=*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=plemiona.pl
-// @grant        none
 // ==/UserScript==
 
 class Row {
