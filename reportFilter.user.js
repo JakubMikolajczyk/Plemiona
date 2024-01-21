@@ -169,21 +169,41 @@ function updateRows(rows, dots, attacks) {
     rows.forEach(row => row.hide())
 }
 
-//TODO refactor
-function selectAll(rows, input1, input2){
-    input2.checked = input1.checked
+function setCheckedAll(rows, input, hidden){
     rows.forEach(row => row.unChecked())
-    rows.filter(row => row.isHidden() === false)
-        .forEach(row => row.setChecked(input1.checked))
+    rows.filter(row => row.isHidden() === hidden)
+        .forEach(row => row.setChecked(input.checked))
 }
 
-//TODO refactor
 function makeSelectAllInputs(rows){
     let topInput = document.getElementById("select_all_top")
     let bottomInput = document.getElementById("select_all")
 
-    topInput.onclick = () => selectAll(rows, topInput, bottomInput)
-    bottomInput.onclick = () => selectAll(rows, bottomInput, topInput)
+    topInput.onclick = () => {
+        bottomInput.checked = topInput.checked
+        setCheckedAll(rows, topInput, false)
+    }
+    bottomInput.onclick = () => {
+        topInput.checked = bottomInput.checked
+        setCheckedAll(rows, bottomInput, false)
+    }
+}
+
+function makeSelectHiddenInput(rows){
+    let parent = document.getElementById("select_all").parentElement
+
+    let newInput = document.createElement("input")
+    newInput.id = "select_all_hidden"
+    newInput.type = "checkbox"
+    newInput.onclick = () => setCheckedAll(rows, newInput, true)
+
+    let newLabel = document.createElement("label")
+    newLabel.for = "select_all_hidden"
+    newLabel.textContent = "zaznacz wszystkie ukryte"
+
+    parent.colspan = "4"
+    parent.append(newInput)
+    parent.append(newLabel)
 }
 
 const dotTypes = ["blue", "green", "yellow", "red_yellow", "red_blue", "red"]
@@ -197,3 +217,4 @@ dotInputs.forEach(dot => dot.setInputOnclick(() => updateRows(rows, dotInputs, a
 attackInputs.forEach(attack => attack.setInputOnclick(() => updateRows(rows, dotInputs, attackInputs)))
 
 makeSelectAllInputs(rows)
+makeSelectHiddenInput(rows)
