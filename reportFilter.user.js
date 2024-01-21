@@ -98,6 +98,7 @@ class Input {
         this.input = input
         this.input.type = "checkbox"
         this.input.onclick = null
+        this.input.id = this.input.id + "_new" //turn off default save
     }
 
     setInputOnclick(fun) {
@@ -154,19 +155,27 @@ function makeReportRowsList() {
         .map(row => new reportRow(row))
 }
 
-//TODO refactor to sth better
+function rowsDoMultipleFilter(rows, arr){
+    for (const elem of arr){
+        if(!elem.isChecked())
+            rows = rows.filter(elem.getNegPred())
+    }
+    return rows
+}
+
 function updateRows(rows, dots, attacks) {
     rows.forEach(row => row.unHide())
-    for (const dot of dots) {
-        if (!dot.isChecked())
-            rows = rows.filter(dot.getNegPred())
-    }
 
-    for (const attack of attacks) {
-        if (!attack.isChecked())
-            rows = rows.filter(attack.getNegPred())
-    }
-    rows.forEach(row => row.hide())
+    const isDotChecked = dots.some(dot => dot.isChecked())
+    const isAttackChecked = attacks.some(attack => attack.isChecked())
+
+    if (isDotChecked)
+        rows = rowsDoMultipleFilter(rows, dots)
+    if (isAttackChecked)
+        rows = rowsDoMultipleFilter(rows, attacks)
+
+    if (isDotChecked || isAttackChecked)
+        rows.forEach(row => row.hide())
 }
 
 function setCheckedAll(rows, input, hidden){
