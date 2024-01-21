@@ -187,13 +187,17 @@ function setCheckedAll(rows, input, hidden){
 function makeSelectAllInputs(rows){
     let topInput = document.getElementById("select_all_top")
     let bottomInput = document.getElementById("select_all")
+    let hiddenInput = document.getElementById("select_all_hidden")
 
+    console.log(hiddenInput)
     topInput.onclick = () => {
         bottomInput.checked = topInput.checked
+        hiddenInput.checked = false
         setCheckedAll(rows, topInput, false)
     }
     bottomInput.onclick = () => {
         topInput.checked = bottomInput.checked
+        hiddenInput.checked = false
         setCheckedAll(rows, bottomInput, false)
     }
 }
@@ -204,8 +208,11 @@ function makeSelectHiddenInput(rows){
     let newInput = document.createElement("input")
     newInput.id = "select_all_hidden"
     newInput.type = "checkbox"
-    newInput.onclick = () => setCheckedAll(rows, newInput, true)
-
+    newInput.onclick = () => {
+        document.getElementById("select_all_top").checked = false
+        document.getElementById("select_all").checked = false
+        setCheckedAll(rows, newInput, true)
+    }
     let newLabel = document.createElement("label")
     newLabel.for = "select_all_hidden"
     newLabel.textContent = "zaznacz wszystkie ukryte"
@@ -225,5 +232,5 @@ let attackInputs = attackTypes.map(attack => new AttackTypeInput(attack))
 dotInputs.forEach(dot => dot.setInputOnclick(() => updateRows(rows, dotInputs, attackInputs)))
 attackInputs.forEach(attack => attack.setInputOnclick(() => updateRows(rows, dotInputs, attackInputs)))
 
-makeSelectAllInputs(rows)
 makeSelectHiddenInput(rows)
+makeSelectAllInputs(rows)
