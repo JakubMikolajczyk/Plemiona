@@ -41,15 +41,6 @@ class scavengeWindow {
     }
 }
 
-function fillAll() {
-    $(".fill-all").click()
-}
-
-function fillMaxSpear() {
-    let td = document.querySelector(".candidate-squad-widget.vis").querySelector("td")
-    td.querySelector("a").click()
-}
-
 function fill(unit, number) {
     let field = $(`[name=${unit}]`);
     let available = Number(field[0].parentNode.children[1].innerText.match(/\d+/)[0]);
