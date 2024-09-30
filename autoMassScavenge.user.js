@@ -60,15 +60,18 @@ class Option
         console.log("OPTION:" + this.option)
         let time = null
         let img = this.option.getElementsByTagName("img")[0]
-        console.log(img)
+        await sleep(Math.random() * 300 + 700)
+        console.log("GetTimer img", img)
         img.dispatchEvent(new Event('mouseover'))
-        await sleep(Math.random() * 900 + 700)
-        let spans = document
+        let tooltip = document
             .querySelector("#tooltip")
+        console.log("GetTimer tooltip", tooltip)
+        let spans = tooltip
             .getElementsByTagName("div")[0]
             .getElementsByTagName("span")
+        console.log("GetTimer spans" , spans)
         time = spans[spans.length - 1].innerText
-        console.log(time)
+        console.log("GetTimer time" , time)
         return convertToSeconds(time)
     }
 }
@@ -81,6 +84,7 @@ class Manager
         this.options = []
         for(let i = 0; i < 4; i++)
             this.options[i] = new Option(i, this.selectAll[i])
+        this.options.reverse()
     }
 
     async run() {
